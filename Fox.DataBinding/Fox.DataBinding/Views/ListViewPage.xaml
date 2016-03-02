@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Fox.DataBinding.ListViewPage">
+	<StackLayout>
+		<ListView x:Name="PersonList" HasUnevenRows="true" >		       
+		  	<ListView.ItemTemplate>
+		      	<DataTemplate> 
+			      	<ViewCell>
+			   		 	<ViewCell.View>
+			   		 		<StackLayout  Padding="15, 10, 10, 10">
+			   		 			<Label Text="{Binding FullName, StringFormat='Name: {0}'}" />
+			   		 			<Label Text="{Binding Age, StringFormat='Age: {0}'}" />
+
+			   		 			<StackLayout x:Name="MoreInfo" IsVisible="{Binding Visible}">
+			   		 				<Label Text="{Binding Role, StringFormat='Role: {0}'}" />
+			   		 			</StackLayout>
+			   		 		</StackLayout>
+			   		 	</ViewCell.View>
+	   		 		</ViewCell>
+	   		 	</DataTemplate>
+		 	</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>
